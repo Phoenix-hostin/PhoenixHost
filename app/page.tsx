@@ -12,6 +12,7 @@ import { Footer } from "@/components/footer"
 import { motion } from "framer-motion"
 import { useEffect } from "react"
 
+
 export default function Page() {
   useEffect(() => {
     const handleScroll = (e: Event) => {
@@ -51,7 +52,7 @@ export default function Page() {
         />
         
         {/* Content */}
-        <div className="relative z-10 pt-32 px-4">
+        <div className="relative z-10 pt-24 md:pt-32 px-4">
           <div className="max-w-6xl mx-auto">
             <motion.h1 
               className="text-4xl md:text-5xl font-bold text-white mb-4"
@@ -71,7 +72,7 @@ export default function Page() {
             </motion.p>
             
             <motion.div 
-              className="mb-12"
+              className="mb-8 md:mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -89,9 +90,9 @@ export default function Page() {
         </div>
 
         {/* Service Cards */}
-        <div className="absolute bottom-4 md:bottom-12 left-0 right-0">
+        <div className="absolute bottom-0 md:bottom-12 left-0 right-0 mb-4 md:mb-0">
           <div className="max-w-6xl mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-2xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 max-w-2xl mx-auto">
               <ServiceCard 
                 title="Minecraft"
                 description="Starting at $1.00"
