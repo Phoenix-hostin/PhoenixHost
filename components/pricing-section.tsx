@@ -9,7 +9,7 @@ interface PlanProps {
   index: number
 }
 
-const Plan = ({ name, price, features, type, index }: PlanProps) => (
+const Plan = ({ name, price, features, index }: PlanProps) => (
   <motion.div 
     className="bg-[#1a1c2e] p-4 md:p-6 rounded-lg flex flex-col"
     initial={{ opacity: 0, y: 20 }}
