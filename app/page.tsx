@@ -47,7 +47,7 @@ export default function Page() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(10,11,20,1) 100%), url('https://i.pinimg.com/736x/c8/3e/8c/c83e8cdb08a510522db1dbe43e1c49c5.jpg')`
+            backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(10,11,20,1) 100%), url('https://images2.alphacoders.com/135/thumb-1920-1353836.png')`
           }}
         />
         
