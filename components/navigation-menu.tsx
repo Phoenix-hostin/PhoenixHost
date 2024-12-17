@@ -2,9 +2,12 @@
 
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import { Menu, X } from 'lucide-react'
 
 export function NavigationMenu() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
   useEffect(() => {
     const handleScroll = (e: Event) => {
       e.preventDefault()
@@ -40,24 +43,34 @@ export function NavigationMenu() {
             <span className="text-white font-bold text-xl">Phoenix host</span>
           </Link>
 
+          {/* Mobile menu button */}
+          <button
+            className="md:hidden text-white"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
           {/* Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-white hover:text-gray-300">
+          <nav className={`${
+            mobileMenuOpen ? 'block' : 'hidden'
+          } absolute top-16 left-0 right-0 bg-[#1a1c2e] md:bg-transparent md:static md:flex items-center space-y-4 md:space-y-0 md:space-x-8 p-4 md:p-0`}>
+            <Link href="/" className="block text-white hover:text-gray-300">
               Home
             </Link>
-            <Link href="#minecraft-pricing" className="text-white hover:text-gray-300">
+            <Link href="#minecraft-pricing" className="block text-white hover:text-gray-300">
               Minecraft Hosting
             </Link>
-            <Link href="#vps-pricing" className="text-white hover:text-gray-300">
+            <Link href="#vps-pricing" className="block text-white hover:text-gray-300">
               Other Hosting
             </Link>
-            <a href="https://discord.gg/phoenixhosting" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
+            <a href="https://discord.gg/phoenixhosting" target="_blank" rel="noopener noreferrer" className="block text-white hover:text-gray-300">
               Important
             </a>
           </nav>
 
           {/* CTA Button */}
-          <Button className="bg-[#7c3aed] hover:bg-[#6d28d9] text-white">
+          <Button className="hidden md:block bg-[#7c3aed] hover:bg-[#6d28d9] text-white">
             Get Started
           </Button>
         </div>
